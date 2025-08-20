@@ -31,6 +31,7 @@ function App() {
         <input type="number" placeholder="Number of Gifs" className="input-wrap" value={total} onChange={(e) => setTotal(e.target.value)}/>
       </div>
       <ButtonCall onSearch={handleSearch} />
+      <Giffer gifApi={giphyUrl} />
     </div>
   )
 }
