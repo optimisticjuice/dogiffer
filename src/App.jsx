@@ -1,12 +1,16 @@
 import { useState } from 'react'
 import './Aesthic.css';
 
+
+
+
 function App() {
   const [searchTerm, setSearchTerm] = useState('Thundermans');
   const [total, setTotal] = useState(10);
   const [giphyUrl, setGiphyUrl] = useState('');
   
   const apiKey = "bZe4nEmDbpJVXOXR8z2mm6N35VCjaiKn";
+
 
   const handleSearch = () => {
     const url = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${searchTerm}&limit=${total}`;

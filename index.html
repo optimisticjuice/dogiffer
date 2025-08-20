@@ -14,21 +14,21 @@
         const link = document.getElementById('favicon');
         let i = 0;
 // Swap the favicon ~12fps (adjust interval as you like)
-const FPS = 12;
-setInterval(() => {
+        const FPS = 12;
+        setInterval(() => {
   // Remove old link to avoid browsers ignoring href changes
-  const old = document.getElementById('favicon');
-  if (old) old.parentNode.removeChild(old);
+        const old = document.getElementById('favicon');
+        if (old) old.parentNode.removeChild(old);
 
-  const l = document.createElement('link');
-  l.id = 'favicon';
-  l.rel = 'icon';
-  l.type = 'image/png';
-  l.sizes = '32x32';
-  l.href = frames[i];
-  document.head.appendChild(l);
+    const l = document.createElement('link');
+    l.id = 'favicon';
+    l.rel = 'icon';
+    l.type = 'image/png';
+    l.sizes = '32x32';
+    l.href = frames[i];
+    document.head.appendChild(l);
 
-  i = (i + 1) % frames.length;
+    i = (i + 1) % frames.length;
 }, 1000 / FPS);
     </script>
   </body>
