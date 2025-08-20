@@ -2,12 +2,34 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <link id="favicon" rel="icon" type="image/png" sizes="32x32" href="./public/mordyon2/mordyon_000.png">
+    <title>Giffer</title>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+        const frames = Array.from({ length: 28 }, (_, i) => `/mordyon2/mordyon_${String(i).padStart(3, '0')}.png`);
+        const link = document.getElementById('favicon');
+        let i = 0;
+// Swap the favicon ~12fps (adjust interval as you like)
+const FPS = 12;
+setInterval(() => {
+  // Remove old link to avoid browsers ignoring href changes
+  const old = document.getElementById('favicon');
+  if (old) old.parentNode.removeChild(old);
+
+  const l = document.createElement('link');
+  l.id = 'favicon';
+  l.rel = 'icon';
+  l.type = 'image/png';
+  l.sizes = '32x32';
+  l.href = frames[i];
+  document.head.appendChild(l);
+
+  i = (i + 1) % frames.length;
+}, 1000 / FPS);
+    </script>
   </body>
 </html>
