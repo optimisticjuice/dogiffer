@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './Aesthic.css';
-
+import Giffer from "./Giffer.jsx";
 
 
 
