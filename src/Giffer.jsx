@@ -12,7 +12,7 @@ export default function Giffer() {
     const [disliked, setDisliked] = useState([]);
     const [searchTerm, setSearchTerm] = useState('Thundermans');
     const [total, setTotal] = useState(10);
-    const apiKey = "bZe4nEmDbpJVXOXR8z2mm6N35VCjaiKn";
+    const apiKey = import.meta.env.VITE_API_KEY;
     let url = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${searchTerm}&limit=${total}`;
     const [ignore, setIgnore] = useState(false);
     const [loading, setLoading] = useState(true);
