@@ -5,18 +5,18 @@ import imgdone from "./assets/giffinished.png"
 
 
 export default function Giffer() {
-
+    const VITE_URL = import.meta.env.VITE_URL;
     const [gifs, setGifs] = useState([]);
     const [index, setIndex] = useState(0);
     const [liked, setLiked] = useState([]);
     const [disliked, setDisliked] = useState([]);
     const [searchTerm, setSearchTerm] = useState('Thundermans');
     const [total, setTotal] = useState(10);
-    const apiKey = "bZe4nEmDbpJVXOXR8z2mm6N35VCjaiKn";
-    let url = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${searchTerm}&limit=${total}`;
     const [ignore, setIgnore] = useState(false);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
+    const CHANGABLE = `&q=${searchTerm}&limit=${total}`
+    const url = VITE_URL + CHANGABLE;
     // initialize all the variables 👆 that need useState
 
     function dupliApi() {
